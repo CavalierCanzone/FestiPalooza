@@ -18,6 +18,7 @@ public class SkinPannel : MonoBehaviour
         {
             isSkinUnlocked = true;
             buttonText.text = "SELECT";
+            Destroy(iconImage);
         }
     }
 
@@ -27,7 +28,6 @@ public class SkinPannel : MonoBehaviour
     {
         
         SkinLoader.skinToLoad = skinToEquip;
-        
         
     }
 
