@@ -11,14 +11,16 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, life);
     }
 
-    void OnCollisionEnter(Collision collision) 
+    void OnCollisionEnter(Collision other) 
     {
-        if (collision.gameObject.TryGetComponent<HeartSystem>(out HeartSystem HeartSystemComponent))
+        if (other.gameObject.TryGetComponent<HeartSystem>(out HeartSystem HeartSystemComponent))
         {
             HeartSystemComponent.TakeDamage(1);
+            
         }
 
-        Destroy(gameObject); 
+        Destroy(gameObject);
+
     }
     
 }
